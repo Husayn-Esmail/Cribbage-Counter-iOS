@@ -16,13 +16,14 @@ struct ContentView: View {
                 Image(systemName: "globe")
                     .imageScale(.large)
                     .foregroundColor(.accentColor)
-                Text("Pick the number of players")
+                Text("Pick the number of players").font(.title).fontWeight(.semibold).padding(1.5)
+                
                 HStack{
                     Button("2", action: { game.initPlayers(number: 2) }).padding(1.3)
                     Button("3", action: { game.initPlayers(number: 3) })
-                }.buttonStyle(.borderedProminent)
+                }.buttonStyle(.borderedProminent).font(.system(size: 36))
                 if game.Players != 0 {
-                    NavigationLink("Start", destination: GameView().environmentObject(game)).buttonStyle(.borderedProminent)
+                    NavigationLink("Start", destination: GameView().environmentObject(game)).buttonStyle(.borderedProminent).font(.system(size: 36))
                 }
                 Text("\(game.Players)")
                 
