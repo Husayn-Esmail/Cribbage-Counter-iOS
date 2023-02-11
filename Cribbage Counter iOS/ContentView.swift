@@ -21,7 +21,7 @@ struct ContentView: View {
             Text("\(Players)")
             List {
                 ForEach(scores.sorted(by: >), id: \.key) { key, value in
-                    Text("\(value) \(key)")
+                    Text("\(key):\(value)")
                 }
             }
         
@@ -30,15 +30,21 @@ struct ContentView: View {
         .padding()
     }
     
+    func populateScores(players: Int) {
+        var counter: Int = 0;
+        while (counter != players) {
+            scores["Player\(counter+1)"] = 0
+            counter += 1
+        }
+    }
+    
     func two_players() {
         Players = 2
-        scores["Player1"] = 0;
-        scores["Player2"] = 0;
+        populateScores(players: Players)
     }
     func three_players() {
-        two_players()
-        scores["Player3"] = 0;
-        Players += 1;
+        Players = 3;
+        populateScores(players: Players)
     }
 }
 
