@@ -61,6 +61,10 @@ class Game: ObservableObject {
         Players = number
         populateScores(players: Players)
     }
+    
+    func incrementScore(playerName: String, number: Int) {
+        scores[playerName]! += number
+    }
 }
 
 
