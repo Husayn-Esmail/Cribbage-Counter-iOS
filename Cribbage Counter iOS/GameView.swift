@@ -18,6 +18,26 @@ struct GameView: View {
                         Text("\(key) :     \(value)")
                     }
                 }
+                HStack{
+                    VStack {
+                            Text("Player 1 Actions:")
+                        HStack{
+                            Button("+", action: {game.incrementScore(playerName: "Player1", number: 1)})
+                            if (game.scores["Player1"] ?? 0 > 0) {
+                                Button("-", action: {game.incrementScore(playerName: "Player1", number: -1)})
+                            }
+                        }
+                    }.padding()
+                    VStack{
+                        Text("Player 2 Actions:")
+                        HStack{
+                            Button("+", action:{game.incrementScore(playerName: "Player2", number: 1)})
+                            if (game.scores["Player2"] ?? 0 > 0) {
+                                Button("-", action: {game.incrementScore(playerName: "Player2", number: -1)})
+                            }
+                        }
+                    }.padding()
+                }.buttonStyle(.borderedProminent)
             }
         }
     }
