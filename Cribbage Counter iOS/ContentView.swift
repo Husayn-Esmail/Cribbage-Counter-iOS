@@ -8,30 +8,40 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var Players: Int = 0;
-    @State var scores: [String: Int] = [:];
+    @StateObject var game = Game()
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Pick the number of players")
-            HStack{
-                Button("2", action: { initPlayers(number: 2) }).padding(1.3)
-                Button("3", action: { initPlayers(number: 3) })
-            }.buttonStyle(.borderedProminent)
-            Text("\(Players)")
-            List {
-                ForEach(scores.sorted(by: >), id: \.key) { key, value in
-                    Text("\(key):\(value)")
+        NavigationView {
+            VStack {
+                
+                Image(systemName: "globe")
+                    .imageScale(.large)
+                    .foregroundColor(.accentColor)
+                Text("Pick the number of players")
+                HStack{
+                    Button("2", action: { game.initPlayers(number: 2) }).padding(1.3)
+                    Button("3", action: { game.initPlayers(number: 3) })
+                }.buttonStyle(.borderedProminent)
+                NavigationLink("Start", destination: GameView()).buttonStyle(.borderedProminent)
+                Text("\(game.Players)")
+                
+                List {
+                    ForEach(game.scores.sorted(by: >), id: \.key) { key, value in
+                        Text("\(key):\(value)")
+                    }
                 }
+                
+                
             }
-        
-            
+            .padding()
         }
-        .padding()
     }
     
+    
+}
+
+class Game: ObservableObject {
+    @Published var Players: Int = 0;
+    @Published var scores: [String: Int] = [:];
     func resetScores() {
         scores = [:]
     }
@@ -50,6 +60,7 @@ struct ContentView: View {
         populateScores(players: Players)
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
