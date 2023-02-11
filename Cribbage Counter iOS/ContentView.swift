@@ -16,8 +16,8 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             Text("Pick the number of players")
-            Button("2", action: two_players);
-            Button("3", action: three_players)
+            Button("2", action: { initPlayers(number: 2) });
+            Button("3", action: { initPlayers(number: 3) });
             Text("\(Players)")
             List {
                 ForEach(scores.sorted(by: >), id: \.key) { key, value in
@@ -38,12 +38,8 @@ struct ContentView: View {
         }
     }
     
-    func two_players() {
-        Players = 2
-        populateScores(players: Players)
-    }
-    func three_players() {
-        Players = 3;
+    func initPlayers(number: Int) {
+        Players = number
         populateScores(players: Players)
     }
 }
