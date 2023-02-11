@@ -29,21 +29,37 @@ struct GameView: View {
                                 }
                                 Button("+", action: {game.incrementScore(playerName: player, number: 1)})
                             }
+                            HStack {
+                                Button("15", action:{ game.incrementScore(playerName: player, number: 2)})
+                                Button("31", action: {game.incrementScore(playerName: player, number: 2)})
+                            }
+                            HStack {
+                                Button("Pair", action: { game.incrementScore(playerName: player, number: 2)})
+                            }
+                            HStack {
+                                Button("Triplet", action: {
+                                    game.incrementScore(playerName: player, number: 6)
+                                })
+                            }
+                            HStack {
+                                Button("Four", action :{game.incrementScore(playerName: player, number: 12)})
+                            }
+                            HStack{
+                                Button("run (3)", action : {game.incrementScore(playerName: player, number: 3)})
+                                Button("run (4)", action: {game.incrementScore(playerName: player, number: 4)})
+                                Button("run (5)", action: {game.incrementScore(playerName: player, number: 5)})
+                            }
+                            HStack {
+                                Button("Go", action: {game.incrementScore(playerName: player, number: 1)})
+                            }
+                            HStack{
+                                Button("His Knobs", action: {game.incrementScore(playerName: player, number: 1)})
+                                Button("His Heels", action: {game.incrementScore(playerName: player, number: 2)})
+                                Button("Flush", action: {game.incrementScore(playerName: player, number: 4)})
+                            }
                         }.padding().buttonStyle(.borderedProminent)
                     }
                 }
-//                HStack{
-//                    
-//                    VStack{
-//                        Text("Player 2 Actions:")
-//                        HStack{
-//                            Button("+", action:{game.incrementScore(playerName: "Player2", number: 1)})
-//                            if (game.scores["Player2"] ?? 0 > 0) {
-//                                Button("-", action: {game.incrementScore(playerName: "Player2", number: -1)})
-//                            }
-//                        }
-//                    }.padding()
-//                }.buttonStyle(.borderedProminent)
             }
         }
     }
