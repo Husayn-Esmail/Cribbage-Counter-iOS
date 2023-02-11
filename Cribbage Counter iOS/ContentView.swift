@@ -16,8 +16,10 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             Text("Pick the number of players")
-            Button("2", action: { initPlayers(number: 2) });
-            Button("3", action: { initPlayers(number: 3) });
+            HStack{
+                Button("2", action: { initPlayers(number: 2) }).padding(1.3)
+                Button("3", action: { initPlayers(number: 3) })
+            }.buttonStyle(.borderedProminent)
             Text("\(Players)")
             List {
                 ForEach(scores.sorted(by: >), id: \.key) { key, value in
@@ -30,7 +32,12 @@ struct ContentView: View {
         .padding()
     }
     
+    func resetScores() {
+        scores = [:]
+    }
+    
     func populateScores(players: Int) {
+        resetScores()
         var counter: Int = 0;
         while (counter != players) {
             scores["Player\(counter+1)"] = 0
