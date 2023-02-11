@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56787BAF2998427000B9CFB5 /* Cribbage_Counter_WatchOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56787BAE2998427000B9CFB5 /* Cribbage_Counter_WatchOSApp.swift */; };
+		56787BB12998427000B9CFB5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56787BB02998427000B9CFB5 /* ContentView.swift */; };
+		56787BB32998427200B9CFB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56787BB22998427200B9CFB5 /* Assets.xcassets */; };
+		56787BB62998427200B9CFB5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56787BB52998427200B9CFB5 /* Preview Assets.xcassets */; };
+		56787BC02998427200B9CFB5 /* Cribbage_Counter_WatchOS_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56787BBF2998427200B9CFB5 /* Cribbage_Counter_WatchOS_Watch_AppTests.swift */; };
+		56787BCA2998427300B9CFB5 /* Cribbage_Counter_WatchOS_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56787BC92998427300B9CFB5 /* Cribbage_Counter_WatchOS_Watch_AppUITests.swift */; };
+		56787BCC2998427300B9CFB5 /* Cribbage_Counter_WatchOS_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56787BCB2998427300B9CFB5 /* Cribbage_Counter_WatchOS_Watch_AppUITestsLaunchTests.swift */; };
+		56787BCF2998427300B9CFB5 /* Cribbage Counter WatchOS Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 56787BAC2998427000B9CFB5 /* Cribbage Counter WatchOS Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		56787BDB2998430A00B9CFB5 /* GameModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56787BDA2998430A00B9CFB5 /* GameModeView.swift */; };
+		56787BDD2998432F00B9CFB5 /* 121PointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56787BDC2998432F00B9CFB5 /* 121PointView.swift */; };
+		56787BDF2998436D00B9CFB5 /* 61PointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56787BDE2998436D00B9CFB5 /* 61PointView.swift */; };
+		56787BE12998439500B9CFB5 /* BlueWinsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56787BE02998439500B9CFB5 /* BlueWinsView.swift */; };
+		56787BE3299843AB00B9CFB5 /* RedWinsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56787BE2299843AB00B9CFB5 /* RedWinsView.swift */; };
+		56787BE5299843C300B9CFB5 /* ResetConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56787BE4299843C300B9CFB5 /* ResetConfirmationView.swift */; };
 		5682C0E62997023C003E490D /* Cribbage_Counter_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5682C0E52997023C003E490D /* Cribbage_Counter_iOSApp.swift */; };
 		5682C0E82997023C003E490D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5682C0E72997023C003E490D /* ContentView.swift */; };
 		5682C0EA2997023E003E490D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5682C0E92997023E003E490D /* Assets.xcassets */; };
@@ -18,6 +32,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		56787BBC2998427200B9CFB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5682C0DA2997023C003E490D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56787BAB2998427000B9CFB5;
+			remoteInfo = "Cribbage Counter WatchOS Watch App";
+		};
+		56787BC62998427200B9CFB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5682C0DA2997023C003E490D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56787BAB2998427000B9CFB5;
+			remoteInfo = "Cribbage Counter WatchOS Watch App";
+		};
+		56787BCD2998427300B9CFB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5682C0DA2997023C003E490D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56787BAB2998427000B9CFB5;
+			remoteInfo = "Cribbage Counter WatchOS Watch App";
+		};
 		5682C0F32997023E003E490D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5682C0DA2997023C003E490D /* Project object */;
@@ -34,7 +69,37 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		56787BD02998427300B9CFB5 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				56787BCF2998427300B9CFB5 /* Cribbage Counter WatchOS Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		56787BAC2998427000B9CFB5 /* Cribbage Counter WatchOS Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cribbage Counter WatchOS Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		56787BAE2998427000B9CFB5 /* Cribbage_Counter_WatchOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cribbage_Counter_WatchOSApp.swift; sourceTree = "<group>"; };
+		56787BB02998427000B9CFB5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		56787BB22998427200B9CFB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		56787BB52998427200B9CFB5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		56787BBB2998427200B9CFB5 /* Cribbage Counter WatchOS Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cribbage Counter WatchOS Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		56787BBF2998427200B9CFB5 /* Cribbage_Counter_WatchOS_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cribbage_Counter_WatchOS_Watch_AppTests.swift; sourceTree = "<group>"; };
+		56787BC52998427200B9CFB5 /* Cribbage Counter WatchOS Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cribbage Counter WatchOS Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		56787BC92998427300B9CFB5 /* Cribbage_Counter_WatchOS_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cribbage_Counter_WatchOS_Watch_AppUITests.swift; sourceTree = "<group>"; };
+		56787BCB2998427300B9CFB5 /* Cribbage_Counter_WatchOS_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cribbage_Counter_WatchOS_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		56787BDA2998430A00B9CFB5 /* GameModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeView.swift; sourceTree = "<group>"; };
+		56787BDC2998432F00B9CFB5 /* 121PointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 121PointView.swift; sourceTree = "<group>"; };
+		56787BDE2998436D00B9CFB5 /* 61PointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 61PointView.swift; sourceTree = "<group>"; };
+		56787BE02998439500B9CFB5 /* BlueWinsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueWinsView.swift; sourceTree = "<group>"; };
+		56787BE2299843AB00B9CFB5 /* RedWinsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedWinsView.swift; sourceTree = "<group>"; };
+		56787BE4299843C300B9CFB5 /* ResetConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetConfirmationView.swift; sourceTree = "<group>"; };
 		5682C0E22997023C003E490D /* Cribbage Counter iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cribbage Counter iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5682C0E52997023C003E490D /* Cribbage_Counter_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cribbage_Counter_iOSApp.swift; sourceTree = "<group>"; };
 		5682C0E72997023C003E490D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,6 +114,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		56787BA92998427000B9CFB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56787BB82998427200B9CFB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56787BC22998427200B9CFB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5682C0DF2997023C003E490D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -73,12 +159,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56787BAD2998427000B9CFB5 /* Cribbage Counter WatchOS Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				56787BAE2998427000B9CFB5 /* Cribbage_Counter_WatchOSApp.swift */,
+				56787BB02998427000B9CFB5 /* ContentView.swift */,
+				56787BDA2998430A00B9CFB5 /* GameModeView.swift */,
+				56787BDC2998432F00B9CFB5 /* 121PointView.swift */,
+				56787BDE2998436D00B9CFB5 /* 61PointView.swift */,
+				56787BE02998439500B9CFB5 /* BlueWinsView.swift */,
+				56787BE2299843AB00B9CFB5 /* RedWinsView.swift */,
+				56787BE4299843C300B9CFB5 /* ResetConfirmationView.swift */,
+				56787BB22998427200B9CFB5 /* Assets.xcassets */,
+				56787BB42998427200B9CFB5 /* Preview Content */,
+			);
+			path = "Cribbage Counter WatchOS Watch App";
+			sourceTree = "<group>";
+		};
+		56787BB42998427200B9CFB5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				56787BB52998427200B9CFB5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		56787BBE2998427200B9CFB5 /* Cribbage Counter WatchOS Watch AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				56787BBF2998427200B9CFB5 /* Cribbage_Counter_WatchOS_Watch_AppTests.swift */,
+			);
+			path = "Cribbage Counter WatchOS Watch AppTests";
+			sourceTree = "<group>";
+		};
+		56787BC82998427300B9CFB5 /* Cribbage Counter WatchOS Watch AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				56787BC92998427300B9CFB5 /* Cribbage_Counter_WatchOS_Watch_AppUITests.swift */,
+				56787BCB2998427300B9CFB5 /* Cribbage_Counter_WatchOS_Watch_AppUITestsLaunchTests.swift */,
+			);
+			path = "Cribbage Counter WatchOS Watch AppUITests";
+			sourceTree = "<group>";
+		};
 		5682C0D92997023C003E490D = {
 			isa = PBXGroup;
 			children = (
 				5682C0E42997023C003E490D /* Cribbage Counter iOS */,
 				5682C0F52997023E003E490D /* Cribbage Counter iOSTests */,
 				5682C0FF2997023F003E490D /* Cribbage Counter iOSUITests */,
+				56787BAD2998427000B9CFB5 /* Cribbage Counter WatchOS Watch App */,
+				56787BBE2998427200B9CFB5 /* Cribbage Counter WatchOS Watch AppTests */,
+				56787BC82998427300B9CFB5 /* Cribbage Counter WatchOS Watch AppUITests */,
 				5682C0E32997023C003E490D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,6 +220,9 @@
 				5682C0E22997023C003E490D /* Cribbage Counter iOS.app */,
 				5682C0F22997023E003E490D /* Cribbage Counter iOSTests.xctest */,
 				5682C0FC2997023E003E490D /* Cribbage Counter iOSUITests.xctest */,
+				56787BAC2998427000B9CFB5 /* Cribbage Counter WatchOS Watch App.app */,
+				56787BBB2998427200B9CFB5 /* Cribbage Counter WatchOS Watch AppTests.xctest */,
+				56787BC52998427200B9CFB5 /* Cribbage Counter WatchOS Watch AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,6 +267,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		56787BAB2998427000B9CFB5 /* Cribbage Counter WatchOS Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56787BD72998427300B9CFB5 /* Build configuration list for PBXNativeTarget "Cribbage Counter WatchOS Watch App" */;
+			buildPhases = (
+				56787BA82998427000B9CFB5 /* Sources */,
+				56787BA92998427000B9CFB5 /* Frameworks */,
+				56787BAA2998427000B9CFB5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cribbage Counter WatchOS Watch App";
+			productName = "Cribbage Counter WatchOS Watch App";
+			productReference = 56787BAC2998427000B9CFB5 /* Cribbage Counter WatchOS Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		56787BBA2998427200B9CFB5 /* Cribbage Counter WatchOS Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56787BD82998427300B9CFB5 /* Build configuration list for PBXNativeTarget "Cribbage Counter WatchOS Watch AppTests" */;
+			buildPhases = (
+				56787BB72998427200B9CFB5 /* Sources */,
+				56787BB82998427200B9CFB5 /* Frameworks */,
+				56787BB92998427200B9CFB5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56787BBD2998427200B9CFB5 /* PBXTargetDependency */,
+			);
+			name = "Cribbage Counter WatchOS Watch AppTests";
+			productName = "Cribbage Counter WatchOS Watch AppTests";
+			productReference = 56787BBB2998427200B9CFB5 /* Cribbage Counter WatchOS Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		56787BC42998427200B9CFB5 /* Cribbage Counter WatchOS Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56787BD92998427300B9CFB5 /* Build configuration list for PBXNativeTarget "Cribbage Counter WatchOS Watch AppUITests" */;
+			buildPhases = (
+				56787BC12998427200B9CFB5 /* Sources */,
+				56787BC22998427200B9CFB5 /* Frameworks */,
+				56787BC32998427200B9CFB5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56787BC72998427200B9CFB5 /* PBXTargetDependency */,
+			);
+			name = "Cribbage Counter WatchOS Watch AppUITests";
+			productName = "Cribbage Counter WatchOS Watch AppUITests";
+			productReference = 56787BC52998427200B9CFB5 /* Cribbage Counter WatchOS Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		5682C0E12997023C003E490D /* Cribbage Counter iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5682C1062997023F003E490D /* Build configuration list for PBXNativeTarget "Cribbage Counter iOS" */;
@@ -140,10 +327,12 @@
 				5682C0DE2997023C003E490D /* Sources */,
 				5682C0DF2997023C003E490D /* Frameworks */,
 				5682C0E02997023C003E490D /* Resources */,
+				56787BD02998427300B9CFB5 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				56787BCE2998427300B9CFB5 /* PBXTargetDependency */,
 			);
 			name = "Cribbage Counter iOS";
 			productName = "Cribbage Counter iOS";
@@ -196,6 +385,17 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					56787BAB2998427000B9CFB5 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					56787BBA2998427200B9CFB5 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 56787BAB2998427000B9CFB5;
+					};
+					56787BC42998427200B9CFB5 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 56787BAB2998427000B9CFB5;
+					};
 					5682C0E12997023C003E490D = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -225,11 +425,37 @@
 				5682C0E12997023C003E490D /* Cribbage Counter iOS */,
 				5682C0F12997023E003E490D /* Cribbage Counter iOSTests */,
 				5682C0FB2997023E003E490D /* Cribbage Counter iOSUITests */,
+				56787BAB2998427000B9CFB5 /* Cribbage Counter WatchOS Watch App */,
+				56787BBA2998427200B9CFB5 /* Cribbage Counter WatchOS Watch AppTests */,
+				56787BC42998427200B9CFB5 /* Cribbage Counter WatchOS Watch AppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		56787BAA2998427000B9CFB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56787BB62998427200B9CFB5 /* Preview Assets.xcassets in Resources */,
+				56787BB32998427200B9CFB5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56787BB92998427200B9CFB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56787BC32998427200B9CFB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5682C0E02997023C003E490D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -256,6 +482,38 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		56787BA82998427000B9CFB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56787BDB2998430A00B9CFB5 /* GameModeView.swift in Sources */,
+				56787BB12998427000B9CFB5 /* ContentView.swift in Sources */,
+				56787BE3299843AB00B9CFB5 /* RedWinsView.swift in Sources */,
+				56787BDD2998432F00B9CFB5 /* 121PointView.swift in Sources */,
+				56787BE12998439500B9CFB5 /* BlueWinsView.swift in Sources */,
+				56787BE5299843C300B9CFB5 /* ResetConfirmationView.swift in Sources */,
+				56787BDF2998436D00B9CFB5 /* 61PointView.swift in Sources */,
+				56787BAF2998427000B9CFB5 /* Cribbage_Counter_WatchOSApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56787BB72998427200B9CFB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56787BC02998427200B9CFB5 /* Cribbage_Counter_WatchOS_Watch_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56787BC12998427200B9CFB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56787BCC2998427300B9CFB5 /* Cribbage_Counter_WatchOS_Watch_AppUITestsLaunchTests.swift in Sources */,
+				56787BCA2998427300B9CFB5 /* Cribbage_Counter_WatchOS_Watch_AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5682C0DE2997023C003E490D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -286,6 +544,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		56787BBD2998427200B9CFB5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56787BAB2998427000B9CFB5 /* Cribbage Counter WatchOS Watch App */;
+			targetProxy = 56787BBC2998427200B9CFB5 /* PBXContainerItemProxy */;
+		};
+		56787BC72998427200B9CFB5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56787BAB2998427000B9CFB5 /* Cribbage Counter WatchOS Watch App */;
+			targetProxy = 56787BC62998427200B9CFB5 /* PBXContainerItemProxy */;
+		};
+		56787BCE2998427300B9CFB5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56787BAB2998427000B9CFB5 /* Cribbage Counter WatchOS Watch App */;
+			targetProxy = 56787BCD2998427300B9CFB5 /* PBXContainerItemProxy */;
+		};
 		5682C0F42997023E003E490D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5682C0E12997023C003E490D /* Cribbage Counter iOS */;
@@ -299,6 +572,148 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		56787BD12998427300B9CFB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Cribbage Counter WatchOS Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = P4PNCTT7XM;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Cribbage Counter WatchOS";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "Husayn-Esmail.Cribbage-Counter-iOS";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Husayn-Esmail.Cribbage-Counter-iOS.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		56787BD22998427300B9CFB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Cribbage Counter WatchOS Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = P4PNCTT7XM;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Cribbage Counter WatchOS";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "Husayn-Esmail.Cribbage-Counter-iOS";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Husayn-Esmail.Cribbage-Counter-iOS.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
+		56787BD32998427300B9CFB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P4PNCTT7XM;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Husayn-Esmail.Cribbage-Counter-WatchOS-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cribbage Counter WatchOS Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cribbage Counter WatchOS Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		56787BD42998427300B9CFB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P4PNCTT7XM;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Husayn-Esmail.Cribbage-Counter-WatchOS-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cribbage Counter WatchOS Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cribbage Counter WatchOS Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
+		56787BD52998427300B9CFB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P4PNCTT7XM;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Husayn-Esmail.Cribbage-Counter-WatchOS-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Cribbage Counter WatchOS Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		56787BD62998427300B9CFB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P4PNCTT7XM;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Husayn-Esmail.Cribbage-Counter-WatchOS-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Cribbage Counter WatchOS Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
 		5682C1042997023F003E490D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -416,6 +831,7 @@
 		5682C1072997023F003E490D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -445,6 +861,7 @@
 		5682C1082997023F003E490D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -550,6 +967,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		56787BD72998427300B9CFB5 /* Build configuration list for PBXNativeTarget "Cribbage Counter WatchOS Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56787BD12998427300B9CFB5 /* Debug */,
+				56787BD22998427300B9CFB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56787BD82998427300B9CFB5 /* Build configuration list for PBXNativeTarget "Cribbage Counter WatchOS Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56787BD32998427300B9CFB5 /* Debug */,
+				56787BD42998427300B9CFB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56787BD92998427300B9CFB5 /* Build configuration list for PBXNativeTarget "Cribbage Counter WatchOS Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56787BD52998427300B9CFB5 /* Debug */,
+				56787BD62998427300B9CFB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5682C0DD2997023C003E490D /* Build configuration list for PBXProject "Cribbage Counter iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

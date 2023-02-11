@@ -17,8 +17,6 @@ struct GameView: View {
                     ForEach(game.scores.sorted(by: <), id: \.key) { key, value in
                         Text("\(key) :     \(value)")
                     }
-                }
-                List {
                     ForEach(game.scores.sorted(by: <), id: \.key) { player, score in
                         Text("\(player)")
                         VStack {
