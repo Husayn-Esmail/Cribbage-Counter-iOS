@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct GameView: View {
+    @EnvironmentObject var game: Game
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                Text("Players: \(game.Players)")
+                List {
+                    ForEach(game.scores.sorted(by: >), id: \.key) { key, value in
+                        Text("\(key) :     \(value)")
+                    }
+                }
+            }
+        }
     }
 }
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView()
+        GameView().environmentObject(Game())
     }
 }

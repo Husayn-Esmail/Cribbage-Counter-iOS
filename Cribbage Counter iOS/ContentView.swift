@@ -21,16 +21,16 @@ struct ContentView: View {
                     Button("2", action: { game.initPlayers(number: 2) }).padding(1.3)
                     Button("3", action: { game.initPlayers(number: 3) })
                 }.buttonStyle(.borderedProminent)
-                NavigationLink("Start", destination: GameView()).buttonStyle(.borderedProminent)
+                if game.Players != 0 {
+                    NavigationLink("Start", destination: GameView().environmentObject(game)).buttonStyle(.borderedProminent)
+                }
                 Text("\(game.Players)")
                 
                 List {
                     ForEach(game.scores.sorted(by: >), id: \.key) { key, value in
-                        Text("\(key):\(value)")
+                        Text("\(key) :     \(value)")
                     }
                 }
-                
-                
             }
             .padding()
         }
@@ -38,6 +38,7 @@ struct ContentView: View {
     
     
 }
+
 
 class Game: ObservableObject {
     @Published var Players: Int = 0;
@@ -64,6 +65,6 @@ class Game: ObservableObject {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(Game())
     }
 }
