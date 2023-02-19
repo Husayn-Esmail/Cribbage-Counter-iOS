@@ -10,79 +10,25 @@ import SwiftUI
 struct GameView: View {
     @EnvironmentObject var game: Game
     
-    
-    
     var body: some View {
         NavigationView {
             VStack {
                 Text("Players: \(game.Players)")
-                
-                
-                
                 List {
-                    
 //                    scores
-                    ForEach(game.scores.sorted(by: <), id: \.key) { key, value in
-                        Text("\(key) :     \(value)")
+                    ForEach(game.scores.sorted(by: <), id: \.key) { player, score in
+                        HStack {
+                            Text("\(player) :     \(score)")
+                            Text("\(player)")
+                        }
+                        
                     }
                     one().environmentObject(game)
-                    let counter = 0
-//                    increment by one
-                    ForEach(game.scores.sorted(by: <), id: \.key) {
-                        player, score in
-                        HStack{
-                            if (game.scores[player] ?? 0 > 0) {
-                                Button("-", action: {game.incrementScore(playerName: player, number: -1)})
-                            }
-                            Button("+", action: {game.incrementScore(playerName: player, number: 1)})
-                        }
-                    }
-//                    15 or 31
-                    ForEach(game.scores.sorted(by: <), id: \.key) {
-                        player, score in
-                        HStack {
-                            Button("15", action:{ game.incrementScore(playerName: player, number: 2)})
-                            Button("31", action: {game.incrementScore(playerName: player, number: 2)})
-                        }
-                    }
-//                    pairs and triplets
-                    ForEach(game.scores.sorted(by: <), id: \.key) {
-                    player, score in
-                        HStack {
-                            Button("Pair", action: { game.incrementScore(playerName: player, number: 2)})
-                        }
-                        HStack {
-                            Button("Triplet", action: {
-                                game.incrementScore(playerName: player, number: 6)
-                            })
-                        }
-                    }
-//                    everything else
-                    ForEach(game.scores.sorted(by: <), id: \.key) { player, score in
-//                        counter += 1
-                        Text("\(player)")
-                        VStack {
-                            Text("\(player) Actions:")
-
-                            HStack {
-                                Button("Four", action :{game.incrementScore(playerName: player, number: 12)})
-                            }
-                            HStack{
-                                Button("run (3)", action : {game.incrementScore(playerName: player, number: 3)})
-                                Button("run (4)", action: {game.incrementScore(playerName: player, number: 4)})
-                                Button("run (5)", action: {game.incrementScore(playerName: player, number: 5)})
-                            }
-                            HStack {
-                                Button("Go", action: {game.incrementScore(playerName: player, number: 1)})
-                            }
-                            HStack {
-                                Button("His Knobs", action: {game.incrementScore(playerName: player, number: 1)})
-                                Button("His Heels", action: {game.incrementScore(playerName: player, number: 2)})
-                                Button("Flush", action: {game.incrementScore(playerName: player, number: 4)})
-                            }.background(counter % 2 == 0 ? .blue : .red)
-                        }.padding().buttonStyle(.borderedProminent)
-                    }
-                }
+                    two().environmentObject(game)
+                    three().environmentObject(game)
+                    four().environmentObject(game)
+                    five().environmentObject(game)
+                }.padding().buttonStyle(.borderedProminent)
             }
         }
     }
@@ -98,11 +44,79 @@ struct one: View {
                         Button("-", action: {game.incrementScore(playerName: player, number: -1)})
                     }
                     Button("+", action: {game.incrementScore(playerName: player, number: 1)})
-                }.padding().buttonStyle(.borderedProminent)
+                }
             }
         }
     }
 }
+
+struct two: View {
+    @EnvironmentObject var game: Game
+    var body: some View {
+        HStack  {
+            ForEach(game.scores.sorted(by: <), id: \.key) {player,score in
+                VStack{
+                    Button("run (3)", action : {game.incrementScore(playerName: player, number: 3)})
+                    Button("run (4)", action: {game.incrementScore(playerName: player, number: 4)})
+                    Button("run (5)", action: {game.incrementScore(playerName: player, number: 5)})
+                }
+            }
+        }
+    }
+}
+
+struct three: View {
+    @EnvironmentObject var game: Game
+    var body: some View {
+        HStack {
+//                    pairs and triplets
+            ForEach(game.scores.sorted(by: <), id: \.key) {
+            player, score in
+                VStack {
+                    Button("Pair", action: { game.incrementScore(playerName: player, number: 2)})
+                    Button("Triplet", action: {
+                        game.incrementScore(playerName: player, number: 6)
+                    })
+                }
+            }
+        }
+    }
+}
+
+struct four: View {
+    @EnvironmentObject var game: Game
+    var body: some View {
+        HStack {
+            ForEach(game.scores.sorted(by: <), id: \.key) {
+                player, score in
+                VStack {
+                    Button("Four", action :{game.incrementScore(playerName: player, number: 12)})
+                    Button("Go", action: {game.incrementScore(playerName: player, number: 1)})
+                }
+            }
+        }
+    }
+}
+
+struct five: View {
+    @EnvironmentObject var game: Game
+    var body: some View {
+        HStack {
+            ForEach(game.scores.sorted(by: <), id: \.key) { player, score in
+//                        counter += 1
+                HStack {
+                    VStack {
+                        Button("His Knobs", action: {game.incrementScore(playerName: player, number: 1)})
+                        Button("His Heels", action: {game.incrementScore(playerName: player, number: 2)})
+                        Button("Flush", action: {game.incrementScore(playerName: player, number: 4)})
+                    }
+                }
+            }
+        }
+    }
+}
+
+
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
