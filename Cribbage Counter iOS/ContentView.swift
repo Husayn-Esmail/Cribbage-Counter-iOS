@@ -29,7 +29,7 @@ struct ContentView: View {
                 
                 List {
                     ForEach(game.scores.sorted(by: >), id: \.key) { key, value in
-                        Text("\(key) :     \(value)")
+                        Text("\(key) : \(value)")
                     }
                 }
             }
@@ -44,6 +44,8 @@ struct ContentView: View {
 class Game: ObservableObject {
     @Published var Players: Int = 0;
     @Published var scores: [String: Int] = [:];
+    @Published var list_players: [Player] = []
+    
     func resetScores() {
         scores = [:]
     }
@@ -59,11 +61,29 @@ class Game: ObservableObject {
     
     func initPlayers(number: Int) {
         Players = number
+        for P in Range(0...Players) {
+            let new_player: Player = Player()
+            new_player.name = "Player \(P+1)"
+            list_players[P] = new_player
+        }
         populateScores(players: Players)
     }
     
     func incrementScore(playerName: String, number: Int) {
         scores[playerName]! += number
+    }
+}
+
+class Player: ObservableObject {
+    @Published var score: Int = 0;
+    @Published var name: String = ""
+    
+    func increaseScore(number: Int) {
+        score += number
+    }
+    
+    func decreaseScore(number: Int) {
+        score -= number
     }
 }
 
