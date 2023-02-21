@@ -18,7 +18,11 @@ struct GameView: View {
                         player in
                         if let validPlayer = player {
                             Text("\(validPlayer.name): \(validPlayer.score)")
-                            Spacer()
+//                            ensure that only even elements get a spacer [BUG:] This is broken
+                            if (validPlayer.id % 2 == 0) {
+                                Spacer()
+                            }
+                            
                         }
                     }
                 }
@@ -30,14 +34,21 @@ struct GameView: View {
                         VStack {
                             if let validPlayer = player {
 //                                it is important to note that this is very stupid.
-                                Button("increase x", action: {game.players[validPlayer.id]?.changeScore(number: 2)})
-//                                mutating valid player doesn't mutate original value so score doesn't get updated
-//                                also player != nil causes errors so i can't access that directly either also player is immutable
-//                                but the id corresponds to the player's location in the array so it works to access game.players
-//                                after unwrapping using id as index
-                                if validPlayer.score > 0 {
-                                    Button("decrease x", action: {game.players[validPlayer.id]?.changeScore(number: -2)})
+                                HStack {
+                                    if validPlayer.score > 0 {
+                                        Button("-", action: {game.players[validPlayer.id]?.changeScore(number: -2)})
+                                    }
+                                    //                                mutating valid player doesn't mutate original value so score doesn't get updated
+                                    //                                also player != nil causes errors so i can't access that directly either also player is immutable
+                                    //                                but the id corresponds to the player's location in the array so it works to access game.players
+                                    //                                after unwrapping using id as index
+                                    Button("+", action: {game.players[validPlayer.id]?.changeScore(number: 2)})
                                 }
+                            }
+                        }
+                        if let validPlayer = player {
+                            if validPlayer.id % 2 == 0 {
+                                Spacer()
                             }
                         }
                     }
