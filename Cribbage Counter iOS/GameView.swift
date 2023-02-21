@@ -13,21 +13,24 @@ struct GameView: View {
         NavigationView {
             VStack {
                 Text("press the buttons")
-                Button("name player", action: {game.set_player_name(name: "player")})
-                Button("increase score", action: {game.increasePlayerScore(number: 3)})
-                Text("\(game.player.name): \(game.player.score)")
                 Text("x and y")
-                Text("\(game.x.name) : \(game.x.score)")
-                Text("\(game.y.name): \(game.y.score)")
-                Button("increase x", action: {game.x.increaseScore(number: 2)})
-                Button("increase y", action: {game.y.increaseScore(number: 2)})
+                if let x = game.players[0] {
+                    Text("\(x.name) : \(x.score)")
+                }
+                
+                if game.players[0] != nil {
+                    Button("decrease first", action:
+                            {game.players[0]?.changeScore(number: -1)})
+                    Button("increase first", action:
+                            {game.players[0]?.changeScore(number: 1)})
+                }
+                Text("\(game.players.count)")
             }
         }
     }
 }
-
-
-
+    
+    
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
         GameView().environmentObject(Game())

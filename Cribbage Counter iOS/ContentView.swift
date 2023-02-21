@@ -17,10 +17,15 @@ struct ContentView: View {
                     .imageScale(.large)
                     .foregroundColor(.accentColor)
                 Text("Pick the number of players").font(.title).fontWeight(.semibold).padding(1.5)
-                Button("create player", action: {game.make_player()})
-                Button("setname game", action: {game.set_player_name(name: "player")})
-                Button("create xy", action: {game.makePPlayer()})
-                NavigationLink("Start"){ GameView().environmentObject(game)
+//                number of player options available for the game
+                HStack {
+                    Button("2", action: { game.createPlayers(number: 2) })
+                    Button("3", action: { game.createPlayers(number: 3) })
+                }
+                
+//                only show start button once players have been created
+                if game.players.count != 0 {
+                    NavigationLink("Start"){ GameView().environmentObject(game) }
                 }
             }.buttonStyle(.borderedProminent)
         }
@@ -28,77 +33,39 @@ struct ContentView: View {
 }
 
 // use this for custom types
-struct PPlayer {
-    var score: Int;
-    let name: String;
+struct Player {
     let id: Int;
+    let name: String;
+    var score: Int;
     
-    mutating func increaseScore(number: Int) {
+    mutating func changeScore(number: Int) {
         score += number
     }
 }
 
 class Game: ObservableObject {
-    @Published var player: Player!
-    @Published var x: PPlayer!
-    @Published var y: PPlayer!
+    @Published var players: [Player?] = []
     
-    func makePPlayer() {
-        x = PPlayer(score:0, name:"plaeyrs", id:1)
-        y = PPlayer(score:0, name: "player2", id:2)
-    }
     
-    func increasep1(number: Int) {
-        x.score += number
-    }
-    
-    func increaseP2(number: Int) {
-        y.score += number
+//    generic function to create number of players requested
+    func createPlayers(number: Int) {
+//        reset players
+        players = []
+//        create new players
+        for i in Range(0...number-1) {
+            let new_player = Player(id: i, name: "Player \(i+1)", score: 0)
+            players.append(new_player)
+        }
     }
     
-    func make_player() {
-        player = Player()
+    func resetGame() {
+        for var player in players {
+            if player != nil {
+                player?.score = 0
+            }
+        }
     }
     
-    func set_player_name(name: String) {
-        player.name = name
-    }
-    
-    func increasePlayerScore(number: Int) {
-        player.score += number
-    }
-}
-
-//class Player: ObservableObject {
-//    @Published var score: Int = 0;
-//    @Published var name: String = ""
-//    let identifier = UUID()
-//
-//    func increaseScore(number: Int) {
-//        score += number
-//    }
-//
-//    func decreaseScore(number: Int) {
-//        score -= number
-//    }
-//
-//    func setName(new_name: String) {
-//        name = new_name
-//    }
-//}
-
-class Player {
-    var score: Int = 0;
-    var name: String = ""
-    let identifier = UUID()
-    
-    func increaseScore(number: Int) {
-        score += number
-    }
-
-    func decreaseScore(number: Int) {
-        score -= number
-    }
 }
 
 
