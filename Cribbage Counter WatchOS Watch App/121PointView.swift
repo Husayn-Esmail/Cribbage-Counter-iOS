@@ -31,6 +31,7 @@ struct o21PointView: View {
             } else if scores.scores.blueScore == 121 {
                 BlueWinsView()
             } else {
+                NavigationStack {
                 VStack {
                     HStack {
                         // display score labels
@@ -80,11 +81,7 @@ struct o21PointView: View {
                             .offset(x:-65, y: 0)
                             .frame(minWidth:0, maxWidth: 30, minHeight: 23, maxHeight: 23)
                     }
-                    NavigationLink(destination: ResetConfirmationView(), isActive: $resetRequest){
-                        Button(action: {resetRequest = true}, label: {
-                            Text("Reset")
-                        })
-                        .scaledToFill()
+                        NavigationLink("Reset"){ ResetConfirmationView() }
                     }
                 }
             }
