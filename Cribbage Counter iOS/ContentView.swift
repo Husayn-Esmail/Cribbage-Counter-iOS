@@ -40,6 +40,10 @@ struct Player {
     
     mutating func changeScore(number: Int) {
         score += number
+//        ensure you can never have a negative score
+        if score < 0 {
+            score = 0
+        }
     }
 }
 

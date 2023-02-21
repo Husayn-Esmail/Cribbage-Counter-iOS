@@ -11,39 +11,32 @@ struct GameView: View {
     @EnvironmentObject var game: Game
     var body: some View {
         NavigationView {
-            VStack {
-                Text("press the buttons")
-                Text("x and y")
-                if let x = game.players[0] {
-                    Text("\(x.name) : \(x.score)")
-                }
-                
-                if game.players[0] != nil {
-                    Button("decrease first", action:
-                            {game.players[0]?.changeScore(number: -1)})
-                    Button("increase first", action:
-                            {game.players[0]?.changeScore(number: 1)})
-                }
-                Text("\(game.players.count)")
-                List {
-                    HStack {
-                        ForEach(game.players, id: \.?.name) {
-                            player in
-                            if let validPlayer = player {
-                                Text("\(validPlayer.name): \(validPlayer.score)")
-                            }
+            List {
+//                displays the name and score of each player
+                HStack {
+                    ForEach(game.players, id: \.?.name) {
+                        player in
+                        if let validPlayer = player {
+                            Text("\(validPlayer.name): \(validPlayer.score)")
+                            Spacer()
                         }
                     }
-                    
-                    HStack {
-                        ForEach(game.players, id: \.?.name) {
-                            player in
-                            VStack {
-                                if let validPlayer = player {
-                                    Button("increase x", action: {game.players[validPlayer.id]?.changeScore(number: 2)})
-                                    if validPlayer.score > 0 {
-                                        Button("decrease x", action: {game.players[validPlayer.id]?.changeScore(number: -2)})
-                                    }
+                }
+                
+//                displays the buttons for each player
+                HStack {
+                    ForEach(game.players, id: \.?.name) {
+                        player in
+                        VStack {
+                            if let validPlayer = player {
+//                                it is important to note that this is very stupid.
+                                Button("increase x", action: {game.players[validPlayer.id]?.changeScore(number: 2)})
+//                                mutating valid player doesn't mutate original value so score doesn't get updated
+//                                also player != nil causes errors so i can't access that directly either also player is immutable
+//                                but the id corresponds to the player's location in the array so it works to access game.players
+//                                after unwrapping using id as index
+                                if validPlayer.score > 0 {
+                                    Button("decrease x", action: {game.players[validPlayer.id]?.changeScore(number: -2)})
                                 }
                             }
                         }
