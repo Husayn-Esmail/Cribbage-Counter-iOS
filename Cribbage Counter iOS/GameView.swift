@@ -25,8 +25,32 @@ struct GameView: View {
                             {game.players[0]?.changeScore(number: 1)})
                 }
                 Text("\(game.players.count)")
+                List {
+                    HStack {
+                        ForEach(game.players, id: \.?.name) {
+                            player in
+                            if let validPlayer = player {
+                                Text("\(validPlayer.name): \(validPlayer.score)")
+                            }
+                        }
+                    }
+                    
+                    HStack {
+                        ForEach(game.players, id: \.?.name) {
+                            player in
+                            VStack {
+                                if let validPlayer = player {
+                                    Button("increase x", action: {game.players[validPlayer.id]?.changeScore(number: 2)})
+                                    if validPlayer.score > 0 {
+                                        Button("decrease x", action: {game.players[validPlayer.id]?.changeScore(number: -2)})
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
-        }
+        }.buttonStyle(.borderedProminent)
     }
 }
     
