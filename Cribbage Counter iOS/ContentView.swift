@@ -8,80 +8,94 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var game = Game()
+    @StateObject var game: Game = Game()
+    //    @ var lists: [Player] = []
     var body: some View {
         NavigationView {
             VStack {
-                
                 Image(systemName: "globe")
                     .imageScale(.large)
                     .foregroundColor(.accentColor)
                 Text("Pick the number of players").font(.title).fontWeight(.semibold).padding(1.5)
-                
-                HStack{
-                    Button("2", action: { game.initPlayers(number: 2) }).padding(1.3)
-                    Button("3", action: { game.initPlayers(number: 3) })
-                }.buttonStyle(.borderedProminent).font(.system(size: 36))
-                if game.Players != 0 {
-                    NavigationLink("Start", destination: GameView().environmentObject(game)).buttonStyle(.borderedProminent).font(.system(size: 36))
+                Button("create player", action: {game.make_player()})
+                Button("setname game", action: {game.set_player_name(name: "player")})
+                Button("create xy", action: {game.makePPlayer()})
+                NavigationLink("Start"){ GameView().environmentObject(game)
                 }
-                Text("\(game.Players)")
-                
-                List {
-                    ForEach(game.scores.sorted(by: >), id: \.key) { key, value in
-                        Text("\(key) : \(value)")
-                    }
-                }
-            }
-            .padding()
+            }.buttonStyle(.borderedProminent)
         }
     }
-    
-    
 }
 
+// use this for custom types
+struct PPlayer {
+    var score: Int;
+    let name: String;
+    let id: Int;
+    
+    mutating func increaseScore(number: Int) {
+        score += number
+    }
+}
 
 class Game: ObservableObject {
-    @Published var Players: Int = 0;
-    @Published var scores: [String: Int] = [:];
-    @Published var list_players: [Player] = []
+    @Published var player: Player!
+    @Published var x: PPlayer!
+    @Published var y: PPlayer!
     
-    func resetScores() {
-        scores = [:]
+    func makePPlayer() {
+        x = PPlayer(score:0, name:"plaeyrs", id:1)
+        y = PPlayer(score:0, name: "player2", id:2)
     }
     
-    func populateScores(players: Int) {
-        resetScores()
-        var counter: Int = 0;
-        while (counter != players) {
-            scores["Player\(counter+1)"] = 0
-            counter += 1
-        }
+    func increasep1(number: Int) {
+        x.score += number
     }
     
-    func initPlayers(number: Int) {
-        Players = number
-        for P in Range(0...Players) {
-            let new_player: Player = Player()
-            new_player.name = "Player \(P+1)"
-            list_players[P] = new_player
-        }
-        populateScores(players: Players)
+    func increaseP2(number: Int) {
+        y.score += number
     }
     
-    func incrementScore(playerName: String, number: Int) {
-        scores[playerName]! += number
+    func make_player() {
+        player = Player()
+    }
+    
+    func set_player_name(name: String) {
+        player.name = name
+    }
+    
+    func increasePlayerScore(number: Int) {
+        player.score += number
     }
 }
 
-class Player: ObservableObject {
-    @Published var score: Int = 0;
-    @Published var name: String = ""
+//class Player: ObservableObject {
+//    @Published var score: Int = 0;
+//    @Published var name: String = ""
+//    let identifier = UUID()
+//
+//    func increaseScore(number: Int) {
+//        score += number
+//    }
+//
+//    func decreaseScore(number: Int) {
+//        score -= number
+//    }
+//
+//    func setName(new_name: String) {
+//        name = new_name
+//    }
+//}
+
+class Player {
+    var score: Int = 0;
+    var name: String = ""
+    let identifier = UUID()
     
     func increaseScore(number: Int) {
         score += number
     }
-    
+
     func decreaseScore(number: Int) {
         score -= number
     }
