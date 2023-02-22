@@ -37,6 +37,7 @@ struct Player {
     let id: Int;
     let name: String;
     var score: Int;
+    var color: Color;
     
     mutating func changeScore(number: Int) {
         score += number
@@ -56,8 +57,23 @@ class Game: ObservableObject {
 //        reset players
         players = []
 //        create new players
+        var col: Color;
         for i in Range(0...number-1) {
-            let new_player = Player(id: i, name: "Player \(i+1)", score: 0)
+            switch (i) {
+            case 0:
+                col = .blue
+                break
+            case 1:
+                col = .red
+                break
+            case 2:
+                col = .gray
+                break
+            default:
+                col = .blue
+                break
+            }
+            let new_player = Player(id: i, name: "Player \(i+1)", score: 0, color: col)
             players.append(new_player)
         }
     }
