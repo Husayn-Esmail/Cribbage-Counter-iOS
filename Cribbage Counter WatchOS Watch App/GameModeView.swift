@@ -12,19 +12,12 @@ struct GameModeView: View {
     @State var points61 = false
     @ObservedObject var scores = Counters.shared;
     var body: some View {
-        VStack {
-            Text("Game Mode:")
-            NavigationLink(destination: o21PointView(), isActive: $points121){
-                Button(action: {self.points121 = true; scores.scores.blueScore = 0;
-                        scores.scores.redScore = 0;}, label: {
-                    Text("121 Points")
-                })
-            }
-            NavigationLink(destination: s1PointView(), isActive: $points61){
-                Button(action: {self.points61 = true; scores.scores.blueScore = 0;
-                        scores.scores.redScore = 0;}, label: {
-                    Text("61 Points")
-                })
+        NavigationStack {
+            VStack {
+                Text("Game Mode:")
+                
+                NavigationLink("121 Points"){ o21PointView() }
+                NavigationLink("61 Point"){ s1PointView() }
             }
         }
     }
