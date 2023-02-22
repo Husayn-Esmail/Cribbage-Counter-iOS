@@ -11,50 +11,61 @@ struct GameView: View {
     @EnvironmentObject var game: Game
     var body: some View {
         NavigationView {
-            List {
-//                displays the name and score of each player
-                HStack {
-                    ForEach(game.players, id: \.?.name) {
-                        player in
-                        if let validPlayer = player {
-                            Text("\(validPlayer.name): \(validPlayer.score)")
-//                            ensure that only even elements get a spacer [BUG:] This is broken
-                            if (validPlayer.id % 2 == 0) {
-                                Spacer()
+            VStack(alignment: .trailing) {
+//                Button("Reset", action: {game.resetGame()}).padding()
+                List {
+                    //                displays the name and score of each player
+                    HStack {
+                        ForEach(game.players, id: \.?.name) {
+                            player in
+                            if let validPlayer = player {
+                                Text("\(validPlayer.name): \(validPlayer.score)")
+                                //                            ensure that only even elements get a spacer [BUG:] This is broken
+                                if (validPlayer.id % 2 == 0) {
+                                    Spacer()
+                                }
+                                
                             }
-                            
                         }
                     }
-                }
-                
-//                displays the buttons for each player
-                HStack {
-                    ForEach(game.players, id: \.?.name) {
-                        player in
-                        VStack {
-                            if let validPlayer = player {
-//                                it is important to note that this is very stupid.
-                                HStack {
-                                    if validPlayer.score > 0 {
-                                        Button("-", action: {game.players[validPlayer.id]?.changeScore(number: -2)})
+                    
+                    //                displays the buttons for each player
+                    HStack {
+                        ForEach(game.players, id: \.?.name) {
+                            player in
+                            VStack {
+                                if let validPlayer = player {
+                                    //                                it is important to note that this is very stupid.
+                                    HStack {
+                                        if validPlayer.score > 0 {
+                                            Button("-", action: {game.players[validPlayer.id]?.changeScore(number: -1)})
+                                        }
+                                        //                                mutating valid player doesn't mutate original value so score doesn't get updated
+                                        //                                also player != nil causes errors so i can't access that directly either also player is immutable
+                                        //                                but the id corresponds to the player's location in the array so it works to access game.players
+                                        //                                after unwrapping using id as index
+                                        Button("+", action: {game.players[validPlayer.id]?.changeScore(number: 1)})
                                     }
-                                    //                                mutating valid player doesn't mutate original value so score doesn't get updated
-                                    //                                also player != nil causes errors so i can't access that directly either also player is immutable
-                                    //                                but the id corresponds to the player's location in the array so it works to access game.players
-                                    //                                after unwrapping using id as index
-                                    Button("+", action: {game.players[validPlayer.id]?.changeScore(number: 2)})
+                                    
+                                    HStack{
+                                        Button("15", action: { game.players[validPlayer.id]?.changeScore(number: 2)} )
+                                        Button("31", action: { game.players[validPlayer.id]?.changeScore(number: 2)} )
+                                    }
+                                    Button("Go", action: {game.players[validPlayer.id]?.changeScore(number: 1)})
+                                    Text("Run")   
+                                }
+                            }
+                            if let validPlayer = player {
+                                let condition = validPlayer.id % 2 == 0
+                                if condition {
+                                    Spacer()
                                 }
                             }
                         }
-                        if let validPlayer = player {
-                            if validPlayer.id % 2 == 0 {
-                                Spacer()
-                            }
-                        }
                     }
                 }
-            }
-        }.buttonStyle(.borderedProminent)
+            }.buttonStyle(.borderedProminent)
+        }
     }
 }
     
