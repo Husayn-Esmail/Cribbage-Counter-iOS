@@ -21,10 +21,23 @@ struct GameView: View {
                             if let validPlayer = player {
                                 Text("\(validPlayer.name): \(validPlayer.score)")
                                 //                            ensure that only even elements get a spacer [BUG:] This is broken
-                                if (validPlayer.id % 2 == 0) {
-                                    Spacer()
+                                if let validPlayer = player {
+                                    let twoPlayer = game.players.count == 2
+    //                                  these are broken up this way so that the app compiles
+                                    if twoPlayer {
+                                        let conditionOne = validPlayer.id == 0
+                                        if conditionOne  {
+                                            Spacer()
+                                        }
+                                    } else {
+                                        let conditionOne = validPlayer.id == 0
+                                        let conditionTwo = validPlayer.id == 1
+                                        let conditionThree = conditionOne || conditionTwo
+                                        if conditionThree {
+                                            Spacer()
+                                        }
+                                    }
                                 }
-                                
                             }
                         }
                     }
@@ -89,10 +102,22 @@ struct GameView: View {
                                     
                                 }
                             }
+                            
                             if let validPlayer = player {
-                                let condition = validPlayer.id % 2 == 0
-                                if condition {
-                                    Spacer()
+                                let twoPlayer = game.players.count == 2
+//                                check condition
+                                if twoPlayer {
+                                    let conditionOne = validPlayer.id == 0
+                                    if conditionOne  {
+                                        Spacer()
+                                    }
+                                } else {
+                                    let conditionOne = validPlayer.id == 0
+                                    let conditionTwo = validPlayer.id == 1
+                                    let conditionThree = conditionOne || conditionTwo
+                                    if conditionThree {
+                                        Spacer()
+                                    }
                                 }
                             }
                         }
