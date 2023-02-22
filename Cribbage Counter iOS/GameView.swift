@@ -46,13 +46,33 @@ struct GameView: View {
                                         //                                after unwrapping using id as index
                                         Button("+", action: {game.players[validPlayer.id]?.changeScore(number: 1)})
                                     }
-                                    
+//                                    15 and 31
                                     HStack{
                                         Button("15", action: { game.players[validPlayer.id]?.changeScore(number: 2)} )
                                         Button("31", action: { game.players[validPlayer.id]?.changeScore(number: 2)} )
                                     }
+//                                   go
                                     Button("Go", action: {game.players[validPlayer.id]?.changeScore(number: 1)})
-                                    Text("Run")   
+//                                    runs
+                                    Text("Runs")
+                                    HStack {
+                                        Button("3", action: {game.players[validPlayer.id]?.changeScore(number: 3)})
+                                        Button("4", action: {game.players[validPlayer.id]?.changeScore(number: 4)})
+                                        Button("5", action: {game.players[validPlayer.id]?.changeScore(number: 5)})
+                                        
+                                    }
+//                                    jack plays
+                                    HStack {
+                                        Button("His Knobs", action: {game.players[validPlayer.id]?.changeScore(number: 1)})
+                                        Button("His Heels", action: {game.players[validPlayer.id]?.changeScore(number: 2)})
+                                    }
+//                                    pairs, triples, quads
+                                    Text("X of a kind")
+                                    VStack {
+                                        Button("Pair", action: {game.players[validPlayer.id]?.changeScore(number: 2)})
+                                        Button("Triplet", action: {game.players[validPlayer.id]?.changeScore(number: 6)})
+                                        Button("Quadruplet", action: {game.players[validPlayer.id]?.changeScore(number: 12)})
+                                    }
                                 }
                             }
                             if let validPlayer = player {
