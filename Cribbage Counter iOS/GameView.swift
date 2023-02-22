@@ -73,6 +73,11 @@ struct GameView: View {
                                         Button("Triplet", action: {game.players[validPlayer.id]?.changeScore(number: 6)})
                                         Button("Quadruplet", action: {game.players[validPlayer.id]?.changeScore(number: 12)})
                                     }
+                                    Text("Flushes")
+                                    HStack {
+                                        Button("5", action: {game.players[validPlayer.id]?.changeScore(number:4)} )
+                                        Button("4", action: {game.players[validPlayer.id]?.changeScore(number: 5)})
+                                    }
                                 }
                             }
                             if let validPlayer = player {
