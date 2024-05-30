@@ -18,5 +18,5 @@ renew the certificate every week.
 
 ## Project Images
 
-![Gif of my app running on watchOS](images/watch.gif)
+![Gif of my app running on watchOS](Images/watch.gif)
 
