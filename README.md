@@ -19,4 +19,4 @@ renew the certificate every week.
 ## Project Images
 
 ![Gif of my app running on watchOS](Images/watch.gif)
-
+![Gif of app running on iOS](Images/cribbage-counter-ios-screencap.gif)
